@@ -163,7 +163,7 @@ the `volumes` section.
   args:
   - |
     /cloud-sql-proxy \
-    -instances={{ include "celo.blockscout.database-connection-string" . }} \
+    {{ include "celo.blockscout.database-connection-string" . }}
     -term_timeout=30s
   {{- with .Values.infrastructure.database.proxy.livenessProbe }}
   livenessProbe:
